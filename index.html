@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta API</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/posts')
+          .then(resposta => resposta.json())
+          .then(dados => {
+
+            dados.forEach(post => {
+
+              console.log('ID: ' + post.id);
+              console.log('TITLE: ' + post.title);
+              console.log('BODY: ' + post.body);
+              console.log('-----------------------------------');
+
+            });
+
+          })
+          .catch(erro => {
+            console.log('Ocorreu um erro: ' + erro);
+          });
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Consulta</h1>
+        <p></p>
+    </header>
+
+    <main>
+        <section class="container">
+            <h2>Consulta de publicações</h2>
+
+            <p>
+                Realiza consulta em uma API pública
+                utilizando o método fetch() do JavaScript.
+            </p>
+
+            <div class="informacao">
+                <h3>Informações consultadas:</h3>
+                <p>ID - Identificação da publicação</p>
+                <p>TITLE - Título da publicação</p>
+                <p>BODY - Conteúdo da publicação</p>
+            </div>
+
+            <p class="aviso">
+                
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p></p>
+    </footer>
+
+</body>
+</html>
